@@ -1,0 +1,42 @@
+{
+  "name": "@badaso/nuxt",
+  "version": "1.0.0-alpha.1",
+  "description": "Nuxt module for integration with badaso out of the box.",
+  "repository": "uasoft-indonesia/badaso-nuxt",
+  "license": "MIT",
+  "contributors": [
+    "Danny Atthaya <dannyatthaya9@gmail.com>"
+  ],
+  "main": "lib/module.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "nuxt test/fixture",
+    "lint": "eslint lib test",
+    "release": "npm run test && standard-version && git push --follow-tags && npm publish",
+    "test": "npm run lint && jest"
+  },
+  "dependencies": {
+    "@nuxt/http": "^0.6.4",
+    "cookie-universal-nuxt": "^2.1.4",
+    "defu": "^5.0.0",
+    "destr": "^1.1.0",
+    "hookable": "^4.4.1",
+    "requrl": "^3.0.2",
+    "ufo": "^0.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@nuxt/test-utils": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "babel-eslint": "latest",
+    "babel-jest": "latest",
+    "eslint": "latest",
+    "eslint-plugin-ejs-js": "^0.1.0",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "standard-version": "latest"
+  }
+}
