@@ -1,0 +1,8 @@
+# Common
+node_modules
+dist
+.nuxt
+docs
+
+# Plugin
+lib/plugin.js
