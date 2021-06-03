@@ -5,6 +5,10 @@ module.exports = {
   badaso: {
     endpoint: 'http://localhost:8000',
     prefix: 'badaso-api',
-    key: 'token'
+    key: 'token',
+    entities: {
+      blog: true,
+      content: true
+    }
   }
 }
