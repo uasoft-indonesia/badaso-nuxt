@@ -55,7 +55,7 @@ export default {
   - `blog`
   - `content`
 - `key`
-  Will be implemented soon.
+  Key used for the cookie name as well as localStorage/sessionStorage key.
 - `prefix`
   Default: `badaso-api`
   URL prefix to access Badaso API server.
