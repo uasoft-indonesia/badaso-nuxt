@@ -52,6 +52,7 @@ export default {
 - [`this.$badaso.$category`](docs/category.md)
 - [`this.$badaso.$tag`](docs/tag.md)
 - [`this.$badaso.$comment`](docs/comment.md)
+- [`this.$badaso.$content`](docs/content.md)
 
 ## Development
 
