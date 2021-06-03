@@ -25,8 +25,8 @@ yarn add @badaso/nuxt
 Add @badaso/nuxt to the modules section of nuxt.config.js:
 ```js
 export default {
-  modules: ['@nuxtjs/strapi'],
-  strapi: {
+  modules: ['@badaso/nuxt'],
+  badaso: {
     // Options
   }
 }
