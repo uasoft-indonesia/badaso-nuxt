@@ -55,21 +55,72 @@ export default {
   - `blog`
   - `content`
 - `key`
-  Will be implemented soon.
+  Key used for the cookie name as well as localStorage/sessionStorage key.
 - `prefix`
   Default: `badaso-api`
   URL prefix to access Badaso API server.
 
 ## Usage
 
-- [`this.$badaso.$post`](docs/post.md)
-- [`this.$badaso.$category`](docs/category.md)
-- [`this.$badaso.$tag`](docs/tag.md)
-- [`this.$badaso.$comment`](docs/comment.md)
-- [`this.$badaso.$content`](docs/content.md)
+### Authentication
+To handle authentication in your Nuxt app with Badaso, you can:
+
+#### Login
+```js
+await this.$badaso.login({ email: '', password: '' })
+```
+
+#### Register
+```js
+await this.$badaso.register({ email: '', name: '', password: '', passwordConfirmation: '' })
+```
+
+#### Verify
+```js
+await this.$badaso.verify({ email: '', token: '' })
+```
+
+#### Resend Email Verification
+```js
+await this.$badaso.sendEmailConfirmation({ email: '' })
+```
+
+#### Logout
+```js
+await this.$badaso.logout()
+```
+
+#### Forgot Password
+```js
+await this.$badaso.forgotPassword({ email: '' })
+```
+
+#### Verify Token for Forgot Password
+```js
+await this.$badaso.verifyForgotPasswordToken({ email: '', token: '' })
+```
+
+#### Reset Password
+```js
+await this.$badaso.resetPassword({ email: '', password: '', token: '' })
+```
+
+#### User
+Once logged in, you can access your user everywhere:
+```js
+this.$badaso.user
+```
+
+#### Blog Module
+- [Post](docs/post.md)
+- [Category](docs/category.md)
+- [Tag](docs/tag.md)
+- [Comment](docs/comment.md)
+
+#### Content Module
+- [Content](docs/content.md)
 
 ## Development
-
 1. Clone this repo
 2. Install dependencies using `npm install` or `yarn install`
 3. Start development server using `npm run dev` or `yarn dev`
