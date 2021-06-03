@@ -39,7 +39,21 @@ export default {
   URL of the Badaso server.
   Environtment variable BADASO_URL can be used to override `endpoint`.
 - `entities`
-  Will be implemented soon.
+  Default: `{}`
+  You can specify the entities that present in your API. For example:
+  ```js
+  export default {
+    badaso: {
+      entities: {
+        blog: true,
+      }
+    }
+  }
+  ```
+  Then you can use `this.$badaso.$blog.browse()` in your application.
+  For now, entities only accept:
+  - `blog`
+  - `content`
 - `key`
   Will be implemented soon.
 - `prefix`
