@@ -6,7 +6,7 @@
     <h2>options.url</h2>
     <pre>{{ $badaso.$http._defaults.prefixUrl }}</pre>
 
-    <pre>{{ posts }}</pre>
+    <pre>{{ data }}</pre>
   </div>
 </template>
 
@@ -14,13 +14,12 @@
 export default {
   data() {
     return {
-      posts: {}
+      data: {}
     }
   },
   async fetch() {
-    this.posts = await this.$badaso.$category.browse({
-      slug: 'terapkan-sgds-perusahaan-otomotif-hemat-biaya-produksi-70',
-      page: 1
+    this.data = await this.$badaso.$content.fetch({
+      slug: 'content'
     });
   },
 }

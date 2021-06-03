@@ -25,8 +25,8 @@ yarn add @badaso/nuxt
 Add @badaso/nuxt to the modules section of nuxt.config.js:
 ```js
 export default {
-  modules: ['@nuxtjs/strapi'],
-  strapi: {
+  modules: ['@badaso/nuxt'],
+  badaso: {
     // Options
   }
 }
@@ -39,7 +39,21 @@ export default {
   URL of the Badaso server.
   Environtment variable BADASO_URL can be used to override `endpoint`.
 - `entities`
-  Will be implemented soon.
+  Default: `{}`
+  You can specify the entities that present in your API. For example:
+  ```js
+  export default {
+    badaso: {
+      entities: {
+        blog: true,
+      }
+    }
+  }
+  ```
+  Then you can use `this.$badaso.$blog.browse()` in your application.
+  For now, entities only accept:
+  - `blog`
+  - `content`
 - `key`
   Will be implemented soon.
 - `prefix`
@@ -52,6 +66,7 @@ export default {
 - [`this.$badaso.$category`](docs/category.md)
 - [`this.$badaso.$tag`](docs/tag.md)
 - [`this.$badaso.$comment`](docs/comment.md)
+- [`this.$badaso.$content`](docs/content.md)
 
 ## Development
 
