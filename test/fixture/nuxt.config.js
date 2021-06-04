@@ -8,7 +8,8 @@ module.exports = {
     key: 'token',
     entities: {
       blog: true,
-      content: true
+      content: true,
+      crud: ['api-docs']
     }
   }
 }
