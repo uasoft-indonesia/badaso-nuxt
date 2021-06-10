@@ -2,10 +2,13 @@
   "name": "@badaso/nuxt",
   "version": "1.0.0-alpha.1",
   "description": "Nuxt module for integration with badaso out of the box.",
-  "repository": "uasoft-indonesia/badaso-nuxt",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uasoft-indonesia/badaso-nuxt.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "contributors": [
-    "Danny Atthaya <dannyatthaya9@gmail.com>"
+    "Uasoft <hello@uatech.co.id>"
   ],
   "main": "lib/module.js",
   "files": [
@@ -38,5 +41,8 @@
     "jest": "latest",
     "nuxt-edge": "latest",
     "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
