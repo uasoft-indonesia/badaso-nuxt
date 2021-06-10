@@ -21,7 +21,7 @@
     "test": "npm run lint && jest"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.4",
+    "@nuxtjs/axios": "^5.13.6",
     "cookie-universal-nuxt": "^2.1.4",
     "defu": "^5.0.0",
     "destr": "^1.1.0",
