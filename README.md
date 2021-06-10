@@ -34,11 +34,11 @@ export default {
 
 ## Options
 
-- `endpoint`
+- **`endpoint`**
   Default: `process.env.BADASO_URL || 'http://localhost:8000'`
   URL of the Badaso server.
   Environtment variable BADASO_URL can be used to override `endpoint`.
-- `entities`
+- **`entities`**
   Default: `{}`
   You can specify the entities that present in your API. For example:
   ```js
@@ -46,17 +46,19 @@ export default {
     badaso: {
       entities: {
         blog: true,
+        crud: ['articles', 'products']
       }
     }
   }
   ```
   Then you can use `this.$badaso.$blog.browse()` in your application.
   For now, entities only accept:
-  - `blog`
-  - `content`
-- `key`
+  - `blog`: `Boolean`
+  - `content`: `Boolean`
+  - `crud`: `Array`
+- **`key`**
   Key used for the cookie name as well as localStorage/sessionStorage key.
-- `prefix`
+- **`prefix`**
   Default: `badaso-api`
   URL prefix to access Badaso API server.
 
@@ -118,7 +120,10 @@ this.$badaso.user
 - [Comment](docs/comment.md)
 
 #### Content Module
-- [Content](docs/content.md)
+For content module, please refer to [this page](docs/content.md)
+
+#### CRUD Generated
+For CRUD generated, please refer to [this page](docs/crud.md)
 
 ## Development
 1. Clone this repo
