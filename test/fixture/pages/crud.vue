@@ -43,9 +43,6 @@ export default {
       sort: {message: ""}
     }
   },
-  mounted() {
-    console.log(this.$badaso);
-  },
   async fetch() {
     this.login = await this.$badaso.login({
       email: this.email,
