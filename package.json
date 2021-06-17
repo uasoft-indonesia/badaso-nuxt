@@ -1,6 +1,6 @@
 {
   "name": "@badaso/nuxt",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-rc",
   "description": "Nuxt module for integration with badaso out of the box.",
   "repository": {
     "type": "git",
