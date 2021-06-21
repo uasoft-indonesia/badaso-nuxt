@@ -10,6 +10,8 @@ module.exports = {
       blog: true,
       content: true,
       crud: ['api-docs']
-    }
+    },
+    driver: 's3',
+    awsUrl: 'https://badaso-web.s3-ap-southeast-1.amazonaws.com'
   }
 }
