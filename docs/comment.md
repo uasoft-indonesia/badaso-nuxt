@@ -1,6 +1,6 @@
 ## `$comment`
 
-You can access the comment blog API operations by using these methods:
+You can access the comment post API operations by using these methods:
 ### `readByPostSlug({ slug, page, perPage, sort })`
 
 Read comment by post slug using this method. Example: 

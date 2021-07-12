@@ -45,15 +45,15 @@ export default {
   export default {
     badaso: {
       entities: {
-        blog: true,
+        post: true,
         crud: ['articles', 'products']
       }
     }
   }
   ```
-  Then you can use `this.$badaso.$blog.browse()` in your application.
+  Then you can use `this.$badaso.$post.browse()` in your application.
   For now, entities only accept:
-  - `blog`: `Boolean`
+  - `post`: `Boolean`
   - `content`: `Boolean`
   - `crud`: `Array`
 - **`key`**
@@ -113,7 +113,7 @@ Once logged in, you can access your user everywhere:
 this.$badaso.user
 ```
 
-#### Blog Module
+#### Post Module
 - [Post](docs/post.md)
 - [Category](docs/category.md)
 - [Tag](docs/tag.md)
