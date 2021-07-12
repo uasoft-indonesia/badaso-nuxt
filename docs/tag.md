@@ -1,6 +1,6 @@
 ## `$tag`
 
-You can access the tag blog API operations by using these methods:
+You can access the tag post API operations by using these methods:
 ### `browse()`
 
 Browse tags using this method. Example: 

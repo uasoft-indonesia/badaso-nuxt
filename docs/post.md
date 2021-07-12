@@ -1,6 +1,6 @@
 ## `$post`
 
-You can access the post blog API operations by using these methods:
+You can access the post API operations by using these methods:
 ### `browse({ order_field, order_direction, category, tag, page, limit, search })`
 
 Browse posts using this method. Example: 

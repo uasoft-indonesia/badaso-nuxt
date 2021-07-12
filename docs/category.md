@@ -1,6 +1,6 @@
 ## `$category`
 
-You can access the category blog API operations by using these methods:
+You can access the category post API operations by using these methods:
 ### `browse()`
 
 Browse categories using this method. Example: 

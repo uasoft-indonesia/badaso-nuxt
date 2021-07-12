@@ -9,17 +9,17 @@ describe('module', () => {
       badaso: {
         endpoint: 'http://localhost:8000',
         entities: {
-          blog: true,
+          post: true,
           content: true
         },
-        prefix: 'badaso-api'
+        prefix: 'api'
       }
     }
   })
 
   it('renders', async () => {
-    const { body } = await get('/blog')
-    expect(body).toContain('http://localhost:8000/badaso-api')
+    const { body } = await get('/post')
+    expect(body).toContain('http://localhost:8000/api')
     expect(body).toContain('<pre>Post-Browse: true</pre>')
     expect(body).toContain('<pre>Post-Popular: true</pre>')
     expect(body).toContain('<pre>Post-ReadBySlug: true</pre>')

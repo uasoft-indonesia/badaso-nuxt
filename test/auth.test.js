@@ -11,7 +11,7 @@ describe('module', () => {
       ],
       badaso: {
         endpoint: 'http://localhost:8000',
-        prefix: 'badaso-api',
+        prefix: 'api',
         key: 'token'
       }
     }
@@ -20,7 +20,7 @@ describe('module', () => {
   it('renders', async () => {
     const { body } = await get('/auth')
     expect(body).toContain('@badaso/nuxt')
-    expect(body).toContain('http://localhost:8000/badaso-api')
+    expect(body).toContain('http://localhost:8000/api')
     expect(body).toContain('<pre id="register">Request was successful</pre>')
     expect(body).toContain('<pre id="resend">Request was successful</pre>')
     expect(body).toContain('<pre id="login">Request was successful</pre>')
