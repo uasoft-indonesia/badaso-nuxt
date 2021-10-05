@@ -1,6 +1,6 @@
 {
   "name": "@badaso/nuxt",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0",
   "description": "Nuxt integration with badaso.",
   "repository": {
     "type": "git",
