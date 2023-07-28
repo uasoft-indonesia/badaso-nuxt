@@ -1,5 +1,5 @@
 <template>
-  <div>
+   <div>
     <h1>@badaso/nuxt</h1>
     <h2>$badaso.state</h2>
     <pre>{{ $badaso.state }}</pre>
@@ -108,9 +108,9 @@ export default {
       })
     },
     generateEmail() {
-      var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-      var string = '';
-      for(var ii=0; ii<15; ii++){
+      const chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+      let string = '';
+      for(let ii=0; ii<15; ii++){
           string += chars[Math.floor(Math.random() * chars.length)];
       }
       return string + '@gmail.com';

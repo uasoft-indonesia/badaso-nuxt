@@ -54,26 +54,26 @@ export default {
   },
   async fetch() {
     // POST
-    let post = await this.$badaso.$post.browse()
+    const post = await this.$badaso.$post.browse()
 
     if (post) {
       this.postBrowse = true
       this.postSlug = post.data.posts.data[0].slug
       this.postId = post.data.posts.data[0].id
-      let postRead = await this.$badaso.$post.readBySlug({ slug: this.postSlug })
+      const postRead = await this.$badaso.$post.readBySlug({ slug: this.postSlug })
 
       if (postRead) {
         this.postReadBySlug = true
       }
 
       // COMMENT
-      let command = await this.$badaso.$comment.readByPostSlug({ slug: this.postSlug, page: 1 })
+      const command = await this.$badaso.$comment.readByPostSlug({ slug: this.postSlug, page: 1 })
 
       if (command) {
         this.commentReadByPostSlug = true
       }
 
-      let login = await this.$badaso.login({
+      const login = await this.$badaso.login({
         email: 'admin@gmail.com',
         password: 'admin'
       })
@@ -83,7 +83,7 @@ export default {
       }
 
       if (login) {
-        let commentAdd = await this.$badaso.$comment.add({ postId: this.postId, content: "Hello World!" });
+        const commentAdd = await this.$badaso.$comment.add({ postId: this.postId, content: "Hello World!" });
 
         if (commentAdd) {
           this.commentAdd = true
@@ -91,27 +91,27 @@ export default {
       }
     }
 
-    let postPopular = await this.$badaso.$post.popular()
+    const postPopular = await this.$badaso.$post.popular()
 
     if (postPopular) {
       this.postPopular = true
     }
 
     // CATEGORY
-    let category = await this.$badaso.$category.browse()
+    const category = await this.$badaso.$category.browse()
 
     if (category) {
       this.categoryBrowse = true
       this.categoryId = category.data.categories[0].id
       this.categorySlug = category.data.categories[0].slug
 
-      let categoryReadSlug = await this.$badaso.$category.readBySlug({ slug: this.categorySlug })
+      const categoryReadSlug = await this.$badaso.$category.readBySlug({ slug: this.categorySlug })
 
       if (categoryReadSlug) {
         this.categoryReadBySlug = true
       }
 
-      let categoryRead = await this.$badaso.$category.read({ id: this.categoryId })
+      const categoryRead = await this.$badaso.$category.read({ id: this.categoryId })
 
       if (categoryRead) {
         this.categoryRead = true
@@ -119,20 +119,20 @@ export default {
     }
 
     // TAG
-    let tag = await this.$badaso.$tag.browse()
+    const tag = await this.$badaso.$tag.browse()
 
     if (tag) {
       this.tagBrowse = true
       this.tagId = tag.data.tags[0].id
       this.tagSlug = tag.data.tags[0].slug
 
-      let tagReadBySlug = await this.$badaso.$tag.readBySlug({ slug: this.tagSlug })
+      const tagReadBySlug = await this.$badaso.$tag.readBySlug({ slug: this.tagSlug })
 
       if (tagReadBySlug) {
          this.tagReadBySlug = true
       }
 
-      let tagRead = await this.$badaso.$tag.read({ id: this.tagId })
+      const tagRead = await this.$badaso.$tag.read({ id: this.tagId })
 
       if (tagRead) {
         this.tagRead = true
