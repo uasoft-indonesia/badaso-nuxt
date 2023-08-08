@@ -92,8 +92,8 @@ export default {
         }
       ]
     })
-    var tempOne = await this.$badaso['$api-docs'].add({ "slug": "api-docs", "data": [ { "field": "name", "value": "Abc" }, { "field": "amount", "value": "123" } ] })
-    var tempTwo = await this.$badaso['$api-docs'].add({ "slug": "api-docs", "data": [ { "field": "name", "value": "Abc" }, { "field": "amount", "value": "123" } ] })
+    const tempOne = await this.$badaso['$api-docs'].add({ "slug": "api-docs", "data": [ { "field": "name", "value": "Abc" }, { "field": "amount", "value": "123" } ] })
+    const tempTwo = await this.$badaso['$api-docs'].add({ "slug": "api-docs", "data": [ { "field": "name", "value": "Abc" }, { "field": "amount", "value": "123" } ] })
     this.deleteMultiple = await this.$badaso['$api-docs'].deleteMultiple({
       "slug": "api-docs",
       "data": [

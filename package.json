@@ -1,48 +1,55 @@
 {
   "name": "@badaso/nuxt",
   "version": "1.0.0",
-  "description": "Nuxt integration with badaso.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/uasoft-indonesia/badaso-nuxt.git"
+  "description": "My new Nuxt module",
+  "repository": "your-org/my-module",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "contributors": [
-    "Uasoft <hello@uatech.co.id>"
-  ],
-  "main": "lib/module.js",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint lib test",
-    "release": "npm run test && standard-version && git push --follow-tags && npm publish",
-    "test": "npm run lint && jest"
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.6.5",
+    "@nuxt/types": "^2.17.1",
+    "@nuxt/typescript-runtime": "^3.0.1",
+    "@types/lodash": "^4.14.195",
     "axios": "^0.21.1",
-    "cookie-universal-nuxt": "^2.1.4",
-    "defu": "^5.0.0",
+    "cookie-universal-nuxt": "^2.2.2",
     "destr": "^1.1.0",
-    "hookable": "^4.4.1",
     "requrl": "^3.0.2",
     "ufo": "^0.7.5"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
-    "@nuxt/test-utils": "latest",
-    "@nuxtjs/eslint-config": "latest",
-    "babel-eslint": "latest",
-    "babel-jest": "latest",
-    "eslint": "latest",
-    "eslint-plugin-ejs-js": "^0.1.0",
-    "jest": "latest",
-    "nuxt-edge": "latest",
-    "standard-version": "latest"
-  },
-  "publishConfig": {
-    "access": "public"
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-28161214.90af848",
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/schema": "^3.6.5",
+    "@nuxt/test-utils": "^3.6.5",
+    "@types/node": "^18.17.0",
+    "@vitejs/plugin-vue": "latest",
+    "changelogen": "^0.5.4",
+    "eslint": "^8.45.0",
+    "nuxt": "^3.6.5",
+    "vitest": "^0.33.0"
   }
 }
