@@ -1,9 +1,9 @@
-import { defineNuxtModule, addPlugin, createResolver } from "@nuxt/kit";
+import { defineNuxtModule, addPluginTemplate,addPlugin, createResolver } from "@nuxt/kit";
 import defu from "defu";
 import { fileURLToPath } from "url";
-// import { resolve } from "path";
+import { resolve } from "path";
 import { name, version } from "../package.json";
-import
+import { NuxtModule } from "@nuxt/schema";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -15,7 +15,7 @@ export interface ModuleOptions {
   key?: string;
 }
 
-export default defineNuxtModule<ModuleOptions>({
+export const badasoModule: NuxtModule<ModuleOptions> = defineNuxtModule({
   meta: {
     name,
     version,
@@ -34,11 +34,13 @@ export default defineNuxtModule<ModuleOptions>({
     const moduleOptions = defu(nuxt.options.badaso, defaults);
 
     nuxt.options.runtimeConfig.public = nuxt.options.runtimeConfig.public || {};
-    nuxt.options.runtimeConfig.public.badaso = nuxt.options.runtimeConfig.public.badaso || {};
+    nuxt.options.runtimeConfig.public.badaso =
+    nuxt.options.runtimeConfig.public.badaso || {};
     nuxt.options.runtimeConfig.public.badaso.endpoint = moduleOptions.endpoint;
     nuxt.options.runtimeConfig.public.badaso.prefix = moduleOptions.prefix;
 
-    const runtimeDir = fileURLToPath(new URL("./runtime/badaso", import.meta.url));
+    const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
+    nuxt.options.alias["~badaso"] = runtimeDir;
     nuxt.options.build.transpile.push(
       runtimeDir,
       "destr",
@@ -47,11 +49,18 @@ export default defineNuxtModule<ModuleOptions>({
       "ufo"
     );
 
-    // const plugin = resolve("./runtime/plugin");
-    // nuxt.options.build.transpile.push(plugin);
-    // addPlugin(plugin);
-    // addPlugin(resolver.resolve("./runtime/plugin"));
-// nuxt.requireModule('cookie-universal-nuxt')
-    // nuxt.hook("close", async () => {});
+    const plugin = resolve("./runtime/plugin.ts");
+    nuxt.options.build.transpile.push(plugin);
+    //  addPlugin(plugin);
+    addPlugin({
+      src: plugin,
+      fileName: "badaso.ts",
+      options: moduleOptions,
+    });
+
+    //  nuxt.require("cookie-universal-nuxt");
+    nuxt.hook("close", async () => {});
   },
 });
+
+export default badasoModule;
